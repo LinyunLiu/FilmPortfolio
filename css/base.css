@@ -1,0 +1,313 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+:root {
+	font-size: 14px;
+	--color-text: #000;
+	--color-bg: #f2f1eb;
+	--color-link: #000;
+	--color-link-hover: #000;
+	--page-padding: 1rem;
+	--columns: 15;
+	--cursor-blend-mode: difference;
+	--cursor-radius: 0;
+}
+.demo {
+	--cursor-bg: rgba(246, 233, 197, 0.8);
+    --gradient-text-1: #09314c;
+    --gradient-text-2: rgb(242 133 93);
+    --cursor-blend-mode: none;
+    background-image: url(../img/bg.jpg);
+}
+
+body {
+	margin: 0;
+	color: var(--color-text);
+	background-color: var(--color-bg);
+	font-family: "source-code-pro", monospace;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-size: cover;
+	background-position: 50% 50%;
+	height: 100vh;
+	overflow: hidden;
+}
+
+/* Page Loader */
+.js .loading::before,
+.js .loading::after {
+	content: '';
+	position: fixed;
+	z-index: 1000;
+}
+
+.js .loading::before {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--color-bg);
+}
+
+.js .loading::after {
+	top: 50%;
+	left: 50%;
+	width: 60px;
+	height: 60px;
+	margin: -30px 0 0 -30px;
+	border-radius: 50%;
+	opacity: 0.4;
+	background: var(--color-link);
+	animation: loaderAnim 0.7s linear infinite alternate forwards;
+
+}
+
+@keyframes loaderAnim {
+	to {
+		opacity: 1;
+		transform: scale3d(0.5,0.5,1);
+	}
+}
+
+a {
+	text-decoration: none;
+	color: var(--color-link);
+	outline: none;
+	cursor: pointer;
+}
+
+a:hover {
+	color: var(--color-link-hover);
+	outline: none;
+}
+
+/* Better focus styles from https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible */
+a:focus {
+	/* Provide a fallback style for browsers
+	 that don't support :focus-visible */
+	outline: none;
+	background: lightgrey;
+}
+
+a:focus:not(:focus-visible) {
+	/* Remove the focus indicator on mouse-focus for browsers
+	 that do support :focus-visible */
+	background: transparent;
+}
+
+a:focus-visible {
+	/* Draw a very noticeable focus style for
+	 keyboard-focus on browsers that do support
+	 :focus-visible */
+	outline: 2px solid red;
+	background: transparent;
+}
+
+.unbutton {
+	background: none;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	font: inherit;
+	cursor: pointer;
+}
+
+.unbutton:focus {
+	outline: none;
+}
+
+.frame {
+	position: absolute;
+	width: 100%;
+	padding: var(--page-padding);
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-areas: 'title' 'prev' 'sponsor' 'demos';
+	grid-gap: 0.5rem;
+	justify-items: start;
+	align-self: start;
+	justify-self: start;
+	pointer-events: none;
+	align-items: center;
+	z-index: 999;
+}
+
+body #cdawrap {
+    justify-self: start;
+}
+
+.frame a {
+	pointer-events: auto;
+}
+
+.frame__title {
+	grid-area: title;
+	display: flex;
+}
+
+.frame__title-main {
+	font-size: inherit;
+	margin: 0;
+	font-weight: inherit;
+}
+
+.frame__title-back {
+	position: relative;
+	display: flex;
+	align-items: flex-end;
+	margin-bottom: 0.15rem;
+}
+
+.frame__title-back span {
+	display: none;
+}
+
+.frame__title-back svg {
+	fill: currentColor;
+}
+
+.frame__prev {
+	grid-area: prev;
+}
+
+.frame__demos {
+	grid-area: demos;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+}
+
+.frame__demos-item:first-child {
+	width: 100%;
+}
+
+a.frame__demos-item {
+	font-weight: bold;
+}
+
+.content {
+	padding: 0 var(--page-padding);
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	min-height: 100vh;
+	position: relative;
+	justify-content: center;
+	align-items: start;
+	font-family: "greycliff-cf", sans-serif;
+	font-weight: 300;
+}
+
+.content h2 {
+	font-size: 16vw;
+	line-height: 1;
+	margin: 50px 0 0 0;
+	pointer-events: none;
+	background-color: var(--gradient-text-1);
+	background-image: linear-gradient(45deg, var(--gradient-text-1), var(--gradient-text-2));
+	background-size: 100%;
+	background-repeat: repeat;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.content h2 i {
+	font-family: "lores-9-plus-wide", sans-serif;
+	/*font-weight: 400;*/
+	font-style: normal;
+	letter-spacing: -1.75vw;
+	font-size: 14.25vw;
+}
+
+.content p {
+	margin: 3vh 0 0 0;
+	max-width: 50ch;
+	font-weight: 400;
+	font-size: clamp(1.5rem,1.0vw,2rem);
+	font-variation-settings: "wght" 400, "opsz" 72, "ital" 0;
+	pointer-events: none;
+	font-family: "source-code-pro", monospace;
+}
+.content p span{
+	color: #d2795b;
+}
+.content p span.major{
+	color: #333e4f;
+}
+
+.cursor {
+	height: 100%;
+	position: fixed;
+	width: 100%;
+	left: 0;
+	top: 0;
+	pointer-events: none;
+	z-index: 99;
+	mix-blend-mode: var(--cursor-blend-mode);
+	--size: calc(100vw / var(--columns));
+}
+
+.cursor__inner {
+	display: grid;
+	grid-template-columns: repeat(var(--columns), var(--size));
+}
+
+.cursor__inner-box {
+	width: var(--size);
+	height: var(--size);
+	background: var(--cursor-bg);
+	opacity: 0;
+	border-radius: var(--cursor-radius);
+}
+@media screen and (min-width: 53em) {
+	:root {
+		--columns: 30;
+		--page-padding: 2rem;
+	}
+	.frame {
+		grid-template-columns: auto auto auto 1fr;
+		grid-template-areas: 'title prev sponsor demos';
+		justify-items: start;
+		grid-gap: 2rem;
+	}
+	.frame__demos {
+		justify-self: end;
+	}
+	.frame__demos-item:first-child {
+		width: auto;
+	}
+	.content {
+		align-items: center;
+	}
+}
+
+div.buttons-frame{
+	margin: 50px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+button{
+	margin: 0 60px 50px 60px;
+	font-family: "source-code-pro", monospace;
+	font-size: 18px;
+	color: black;
+	background: #F6E9C580;
+	border: 1px solid #F6E9C520;
+	border-radius: 10px;
+	height: 50px;
+	width: 250px;
+	box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.4);
+	backdrop-filter: blur(8px);
+	transition: background 0.1s ease-in-out;
+	padding: 0;
+}
+button:hover{
+	cursor: pointer;
+	background: #f6e9c5;
+	color: black;
+}
+
