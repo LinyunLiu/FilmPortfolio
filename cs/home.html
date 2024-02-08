@@ -3,12 +3,25 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Computer Science Portfolio</title>
+		<title>CS Portfolio - Home</title>
 		<meta name="description" content="A gooey cursor background effect with SVG filters and CSS blend modes." />
 		<meta name="author" content="Codrops & Modified by Linyun Liu" />
 		<link rel="shortcut icon" href="../favicon.png">
 		<link rel="stylesheet" href="https://use.typekit.net/ftj8drh.css">
-		<link rel="stylesheet" type="text/css" href="../css/base_cs.css" />
+		<link rel="stylesheet" type="text/css" href="../css/base_cs_home.css" />
+		<style>
+			.content {
+				opacity: 0;
+			}
+			@keyframes fade-in {
+				from { opacity: 0; }
+				to { opacity: 1; }
+			}
+			#content {
+				opacity: 0;
+				animation: fade-in 0.5s ease-in-out forwards;
+			}
+		</style>
 		<script>document.documentElement.className="js";
 		const supportsCssVars = function () {
 			let e, t = document.createElement("style");
@@ -21,7 +34,6 @@
 			<div class="frame">
 				<a class="frame__prev" href="../index.html">⬅︎ Back</a>
 				<nav class="frame__demos">
-					<span class="frame__demos-item">Links: </span>
 					<a class="frame__demos-item" href="mailto:linyunliu574@gmail.com">Email</a>
 					<a class="frame__demos-item" href="https://github.com/LinyunLiu">GitHub</a>
 					<a class="frame__demos-item" href="https://www.linkedin.com/in/linyun-liu-2a4b05240/">LinkedIn</a>
@@ -30,34 +42,34 @@
 			</div>
 			<div class="frame_nav">
 				<a class="active" href="home.html">Home</a>
-				<a href="home.html">Projects</a>
-				<a href="home.html">Blogs</a>
+				<a href="about.html">About</a>
+				<a href="projects.html">Projects</a>
 			</div>
 
             <!--HERE TO ADD INFORMATION-->
-			<div class="content">
+			<div id="content" class="content">
 				<div class="edu_xp">
-					<h2>Education</h2>
-					<p>Bachelor of Science | Trinity Western University</p>
-					<p>2019 – 2023 Fall</p>
-					<p>Natural & Applied Sciences: Computing Science Major</p>
-					<p>Media & Communication: Film Studies Concentration</p>
-
-					<h2>Experience</h2>
-					<p>Communications Assistant Internship | Safe Fleet</p>
-					<p>Feb. 1st – Apr. 12th , 2023</p>
-					<p>Edit and create special effects for videos that are used for products promotion</p>
-					<p>Assistant | Luoxiao Taekwondo School</p>
-					<p>Summer, 2017</p>
-					<p>Volunteered at a children summer camp to help them learn life skills and independence. Help organize events and schedule.</p>
-					<p>Assistant | Luoxiao Taekwondo School</p>
-					<p>Spring, 2016</p>
-					<p>Keep participants in program order for arena in a provincial Taekwondo competition
+					<h2>Education ✐</h2>
+					<p class="title">Bachelor of Science | Trinity Western University</p>
+					<p class="duration">2019 – 2023 Fall</p>
+					<p class="detail">Natural & Applied Sciences: <span>Computing Science</span> Major
+						<br>Media & Communication: <span>Film Studies</span> Concentration</p>
+					<br><br>
+					<h2>Experience ➹</h2>
+					<p class="title">Communications Assistant Internship | Safe Fleet</p>
+					<p class="duration">Feb. 1st – Apr. 12th , 2023</p>
+					<p class="detail">Edit and create special effects for videos that are used for products promotion</p>
+					<p class="title">Assistant | Luoxiao Taekwondo School</p>
+					<p class="duration">Summer, 2017</p>
+					<p class="detail">Volunteered at a children summer camp to help them learn life skills and independence. Help organize events and schedule.</p>
+					<p class="title">Assistant | Luoxiao Taekwondo School</p>
+					<p class="duration">Spring, 2016</p>
+					<p class="detail">Keep participants in program order for arena in a provincial Taekwondo competition
 						Taking care of contestants and communicate with parents who were highly concerned.
 					</p>
 				</div>
 				<div class="skills">
-					<h2>Skills</h2>
+					<h2>Skills ✍︎ </h2>
 					<ul>
 						<li>Java, JavaFX</li>
 						<li>Data Structure & Algorithm</li>
@@ -72,9 +84,11 @@
 						<li>Android Studio, XCode, Unity, UX/UI</li>
 						<li>Problem Solving, Calculus</li>
 						<li>IT knowledge in general</li>
-
 					</ul>
 				</div>
+				<a href="" title="download resume" download>
+					<button>⬇︎</button>
+				</a>
 			</div>
             <!--END HERE-->
 

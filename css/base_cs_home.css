@@ -16,17 +16,18 @@
     --cursor-radius: 0;
 }
 .demo {
-    --cursor-bg: radial-gradient(#fddc6d 10%,transparent);
+    --cursor-bg: radial-gradient(#ec1752 10%, transparent);
     --gradient-text-1: #000;
     --gradient-text-2: rgb(94 85 147);
-    background-image: url(../img/bg8.jpg);
+    /*background-image: url(../img/bg_cs.jpg);*/
     --cursor-blend-mode: overlay;
+    background-color: var(--color-bg);
 }
 body {
     margin: 0;
     color: var(--color-text);
     background-color: var(--color-bg);
-    font-family: "source-code-pro", monospace;
+    font-family: Futura, "futura-pt", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-size: cover;
@@ -59,7 +60,7 @@ body {
     margin: -30px 0 0 -30px;
     border-radius: 50%;
     opacity: 0.4;
-    background: var(--color-link);
+    background: #ec1752;
     animation: loaderAnim 0.7s linear infinite alternate forwards;
 
 }
@@ -70,20 +71,16 @@ body {
         transform: scale3d(0.5,0.5,1);
     }
 }
-
 a {
     text-decoration: none;
-    color: var(--color-link);
+    color: black;
     outline: none;
     cursor: pointer;
 }
-
 a:hover {
-    color: var(--color-link-hover);
+    color: #ec1752;
     outline: none;
 }
-
-/* Better focus styles from https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible */
 a:focus {
     /* Provide a fallback style for browsers
      that don't support :focus-visible */
@@ -105,21 +102,9 @@ a:focus-visible {
     background: transparent;
 }
 
-.unbutton {
-    background: none;
-    border: 0;
-    padding: 0;
-    margin: 0;
-    font: inherit;
-    cursor: pointer;
-}
-
-.unbutton:focus {
-    outline: none;
-}
-
-.frame {
-    /*position: absolute;*/
+.frame{
+    margin-left: 50px;
+    margin-right: -20px;
     padding: var(--page-padding);
     width: 100%;
     display: grid;
@@ -140,38 +125,13 @@ body #cdawrap {
 .frame a {
     pointer-events: auto;
 }
-
-.frame__title {
-    grid-area: title;
-    display: flex;
-}
-
-.frame__title-main {
-    font-size: inherit;
-    margin: 0;
-    font-weight: inherit;
-}
-
-.frame__title-back {
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    margin-bottom: 0.15rem;
-}
-
-.frame__title-back span {
-    display: none;
-}
-
-.frame__title-back svg {
-    fill: currentColor;
-}
-
 .frame__prev {
     grid-area: prev;
+    margin-top: 7px;
 }
 
 .frame__demos {
+    opacity: 0;
     grid-area: demos;
     display: flex;
     flex-wrap: wrap;
@@ -213,30 +173,28 @@ a.frame__demos-item {
     padding: 20px;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    position: relative;
     align-items: center;
-    font-family: "greycliff-cf", sans-serif;
-    font-weight: 300;
-    margin-left: 120px;
-    margin-right: 120px;
-    margin-top: 40px;
-    overflow: scroll;
+    font-family: Futura, "futura-pt", sans-serif;
+    margin: -50px 50px 50px;
     background: #f6e9c550;
     box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(8px);
     border-radius: 12px;
+    overflow: auto;
+    max-height: 660px;
+    scrollbar-width: none;
 }
 .content div{
-    margin: 0 10px 0 0;
-    width: 600px;
+    margin: 0 10px 40px 0;
     height: 600px;
     padding: 0;
     overflow: scroll;
     scrollbar-width: none;
 }
 .content div p {
-    margin: 1vh 0 0 0;
+    margin: 0 0 0 0;
     max-width: 50ch;
     font-weight: 400;
     font-size: clamp(1.2rem,1.0vw,2rem);
@@ -244,8 +202,25 @@ a.frame__demos-item {
     pointer-events: none;
     font-family: "greycliff-cf", sans-serif;
 }
+/*HERE TO CUSTOMIZE THE FONTS*/
+.content div p.title{
+    font-weight: 600;
+}
+.content div p.duration{
+    font-size: 16px;
+    font-weight: 600;
+    color: gray;
+}
+.content div p span{
+    color: purple;
+    font-weight: bold;
+}
+.content div p.detail{
+    margin-bottom: 20px;
+}
 .content div h2 {
-    margin:0;
+    margin:0 0 5px 0;
+    color: #ec1752;
 }
 .content div ul li{
     margin: 1vh 0 0 0;
@@ -256,47 +231,87 @@ a.frame__demos-item {
     pointer-events: none;
     font-family: "greycliff-cf", sans-serif;
 }
+div.frame_nav{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 22px;
+    left: 10px;
+    margin: 0 0 30px 120px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    /*box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.5);*/
+    background: #000000;
+}
+div.frame_nav a{
+    margin: 5px 15px 5px 15px;
+    font-size: 16px;
+    color: #f6e9c5;
+    pointer-events: auto;
+    z-index: 9999;
+}
+div.frame_nav a:hover{
+    color: #ec1752;
+}
+div.frame_nav a.active{
+    color: #ec1752;
+}
+button{
+    z-index: 9999;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    border: 1px solid transparent;
+    background: #ec1752b1;
+    font-size: 30px;
+    color: #f6e9c5;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    transition: background 0.1s ease-in-out;
+}
+button:hover{
+    cursor: pointer;
+    background: #ec1752;
+}
+
 @media screen and (min-width: 53em) {
     :root {
         --columns: 30;
         --page-padding: 2rem;
     }
+    .content{
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: start;
+        margin-top: 10px;
+        overflow: hidden;
+    }
+    .content div{
+        margin: 20px;
+        width: 100%;
+    }
     .frame {
+        margin-left: 0;
         grid-template-columns: auto auto auto 1fr;
         grid-template-areas: 'title prev sponsor demos';
         justify-items: start;
         grid-gap: 2rem;
     }
+    .frame__prev{
+        margin-top: 0;
+    }
     .frame__demos {
         justify-self: end;
+        margin-right: 20px;
+        opacity: 100%;
     }
     .frame__demos-item:first-child {
         width: auto;
     }
-    /*.content {*/
-    /*    align-items: center;*/
-    /*}*/
-}
-div.frame_nav{
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    margin: 0 0 20px 120px;
-    border-radius: 10px;
-    border: 1px solid transparent;
-    box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.5);
-    background: #42474dc1;
-}
-div.frame_nav a{
-    margin: 5px 15px 5px 15px;
-    font-size: 16px;
-    color: black;
-    font-weight: 600;
-    pointer-events: auto;
-    z-index: 9999;
-}
-div.frame_nav a.active{
-    color: #f6e9c5;
+    button{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 5px;
+    }
 }

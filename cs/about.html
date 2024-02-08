@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CS Portfolio - About</title>
+    <meta name="description" content="A gooey cursor background effect with SVG filters and CSS blend modes." />
+    <meta name="author" content="Codrops & Modified by Linyun Liu" />
+    <link rel="shortcut icon" href="../favicon.png">
+    <link rel="stylesheet" href="https://use.typekit.net/ftj8drh.css">
+    <link rel="stylesheet" type="text/css" href="../css/base_cs_about.css" />
+    <style>
+        .content {
+            opacity: 0;
+        }
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        #content {
+            opacity: 0;
+            animation: fade-in 0.5s ease-in-out forwards;
+        }
+    </style>
+    <script>document.documentElement.className="js";
+    const supportsCssVars = function () {
+            let e, t = document.createElement("style");
+            return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e
+        }
+    ;supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+</head>
+<body class="demo">
+<main>
+    <div class="frame">
+        <a class="frame__prev" href="../index.html">⬅︎ Back</a>
+        <nav class="frame__demos">
+            <a class="frame__demos-item" href="mailto:linyunliu574@gmail.com">Email</a>
+            <a class="frame__demos-item" href="https://github.com/LinyunLiu">GitHub</a>
+            <a class="frame__demos-item" href="https://www.linkedin.com/in/linyun-liu-2a4b05240/">LinkedIn</a>
+            <a class="frame__demos-item" href="https://www.instagram.com/linyunliu42/">Instagram</a>
+        </nav>
+    </div>
+    <div class="frame_nav">
+        <a href="home.html">Home</a>
+        <a class="active" href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+    </div>
+
+    <!--HERE TO ADD INFORMATION-->
+    <div id="content" class="content">
+        <div class="edu_xp">
+            <h2>Who am I ? ✐</h2>
+            <p class="about">I have just received my Bachelor’s degree in Computer Science with a Concentration
+                in Media & Communication: Film Studies at Trinity Western University in Canada.
+                <br><br>
+                I love all fields of Computer Science and I have been motivated to try them all. As a huge nerd,
+                I love to learn and making meaningful projects, it brings me tremendous joys to study and understand
+                new things especially in the world of I.T.. I believe my greatest strength is determination of doing what
+                I feel passionate about, such as software engineering, full stack developments, developing algorithms, etc.
+                I have also been studying and practicing fine arts since kindergarten. With the artistic and emotional
+                part of me, I cannot control myself to make websites and software as beautiful as possible.
+                Problem Solving skill is what I often feel proud of, it is what I am particularly great at doing,
+                I convince myself that there is always a solution to the problem, and I will be committed to fulfill
+                that promise with my perfectionist mind, and I always did. And being a perfectionist, I have a habit to
+                write code that is highly organized, and bugs free as possible as I can. I consider myself an author of a
+                piece of code instead of a programmer.
+                <br><br>
+                I am in general very motivated to contribute to the world of technology with my skills, patience and
+                creativity. I am always eager to find out what more I am capable of creating, innovating with the knowledge
+                that I have been dedicating to learn. As a young individual, I also hope I can explore my potentials
+                and possibilities to acquire more valuable experiences, to challenge myself, as well as making contributions
+                to the growth of technologies.
+            </p>
+        </div>
+        <div class="skills">
+            <h2>Recent Activities & More ✍︎ </h2>
+            <p class="title">Physical Computing Projects & Website | Trinity Western University</p>
+            <p class="duration">September 6th, 2023 – December 31st, 2023</p>
+            <p class="detail">Learning and making various projects using ESP32,  microPython. Working with microchips,
+                circuits, IoT devices.  A website that I made from scratch where it contains my achievements:
+                https://linyunliu.com/PhysicalComputing/</p>
+
+            <p class="title">Bioinformatics Research| Trinity Western University</p>
+            <p class="duration">January  10th, 2023 – April 14th, 2023</p>
+            <p class="detail">Researching with peers on constructing phylogenetic tree from protein clusters using
+                maximum likelihood method to reveal evolutionary relationship between Saccharomyces Cerevisiae,
+                Schizosaccharomyces Pombe and other Fungi species using Google Cloud Computing GitHub:
+                https://github.com/LinyunLiu/Bioinformatics</p>
+
+            <p class="title">Contestant | University of British Columbia</p>
+            <p class="duration">September 12nd, 2022 – February 25th, 2023</p>
+            <p class="detail">ICPC (International Collegiate Programming Contest) training, participated in the Pacific
+                Northwest Regional Contest on February 25th</p>
+
+            <p class="title">Back End Developer | Trinity Western University</p>
+            <p class="duration">September 12nd, 2022 – December 2nd, 2022</p>
+            <p class="detail">Worked as a four-person team. We have completed a software engineering project for android
+                that helps dementia patients. It is a music therapy application developed using unity which integrates
+                Google Drive API and C#. </p>
+
+            <p class="title">Front/Back End Developer | Trinity Western University</p>
+            <p class="duration">November 9th, 2022 – December 7th, 2022</p>
+            <p class="detail">Software engineering team project incorporating with DBMS, MySQL and Java. Our goal was
+                to help Trinity Western University student to search and choose courses in a more convenient way. </p>
+
+            <p class="title">Contestant | Trinity Western University</p>
+            <p class="duration">March 6th, 2021</p>
+            <p class="detail">Participated in the 2021 ICPC (International Collegiate Programming Contest) Pacific
+                Northwest Regional Contest. Our three-person team came in 6th place in Canada.
+
+            </p>
+        </div>
+        <a href="" title="download resume" download>
+            <button>⬇︎</button>
+        </a>
+    </div>
+    <!--END HERE-->
+
+</main>
+<div class="cursor">
+    <div class="cursor__inner">
+        <!-- cursor__inner-box elements come here -->
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+            <filter id="gooey">
+                <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="3.2" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -7" result="goo" />
+                <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+            </filter>
+        </defs>
+    </svg>
+</div>
+
+<script src="../js/gsap.min.js"></script>
+<script type="module" src="../js/index.js"></script>
+</body>
+</html>

@@ -27,7 +27,7 @@ body {
 	margin: 0;
 	color: var(--color-text);
 	background-color: var(--color-bg);
-	font-family: "source-code-pro", monospace;
+	font-family: Futura, "futura-pt", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background-size: cover;
@@ -105,22 +105,8 @@ a:focus-visible {
 	outline: 2px solid red;
 	background: transparent;
 }
-
-.unbutton {
-	background: none;
-	border: 0;
-	padding: 0;
-	margin: 0;
-	font: inherit;
-	cursor: pointer;
-}
-
-.unbutton:focus {
-	outline: none;
-}
-
 .frame {
-	position: absolute;
+	margin-left: 50px;
 	width: 100%;
 	padding: var(--page-padding);
 	display: grid;
@@ -142,38 +128,12 @@ body #cdawrap {
 .frame a {
 	pointer-events: auto;
 }
-
-.frame__title {
-	grid-area: title;
-	display: flex;
-}
-
-.frame__title-main {
-	font-size: inherit;
-	margin: 0;
-	font-weight: inherit;
-}
-
-.frame__title-back {
-	position: relative;
-	display: flex;
-	align-items: flex-end;
-	margin-bottom: 0.15rem;
-}
-
-.frame__title-back span {
-	display: none;
-}
-
-.frame__title-back svg {
-	fill: currentColor;
-}
-
 .frame__prev {
 	grid-area: prev;
 }
 
 .frame__demos {
+	opacity: 0;
 	grid-area: demos;
 	display: flex;
 	flex-wrap: wrap;
@@ -196,15 +156,16 @@ a.frame__demos-item {
 	min-height: 100vh;
 	position: relative;
 	justify-content: center;
-	align-items: start;
+	align-items: center;
 	font-family: "greycliff-cf", sans-serif;
 	font-weight: 300;
+	margin-top: -150px;
 }
 
 .content h2 {
 	font-size: 16vw;
 	line-height: 1;
-	margin: 50px 0 0 0;
+	margin: 0;
 	pointer-events: none;
 	background-color: var(--gradient-text-1);
 	background-image: linear-gradient(45deg, var(--gradient-text-1), var(--gradient-text-2));
@@ -223,13 +184,13 @@ a.frame__demos-item {
 }
 
 .content p {
-	margin: 3vh 0 0 0;
+	margin: 3vh 4vh 2vh 6vh;
 	max-width: 50ch;
 	font-weight: 400;
-	font-size: clamp(1.5rem,1.0vw,2rem);
+	font-size: 18px;
 	font-variation-settings: "wght" 400, "opsz" 72, "ital" 0;
 	pointer-events: none;
-	font-family: "source-code-pro", monospace;
+	font-family: Futura, "futura-pt", sans-serif;
 }
 .content p span{
 	color: #d2795b;
@@ -262,44 +223,24 @@ a.frame__demos-item {
 	opacity: 0;
 	border-radius: var(--cursor-radius);
 }
-@media screen and (min-width: 53em) {
-	:root {
-		--columns: 30;
-		--page-padding: 2rem;
-	}
-	.frame {
-		grid-template-columns: auto auto auto 1fr;
-		grid-template-areas: 'title prev sponsor demos';
-		justify-items: start;
-		grid-gap: 2rem;
-	}
-	.frame__demos {
-		justify-self: end;
-	}
-	.frame__demos-item:first-child {
-		width: auto;
-	}
-	.content {
-		align-items: center;
-	}
-}
-
 div.buttons-frame{
-	margin: 50px;
+	margin: 10px 0 20px 0;
+	min-width: 400px;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	justify-content: center;
 }
 button{
-	margin: 0 60px 50px 60px;
-	font-family: "source-code-pro", monospace;
+	margin: 10px 50px 10px 50px;
+	font-family: Futura, "futura-pt", sans-serif;
 	font-size: 18px;
 	color: black;
-	background: #F6E9C580;
+	background: #F6E9C520;
 	border: 1px solid #F6E9C520;
 	border-radius: 10px;
 	height: 50px;
-	width: 250px;
+	width: 400px;
 	box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.4);
 	backdrop-filter: blur(8px);
 	transition: background 0.1s ease-in-out;
@@ -309,5 +250,36 @@ button:hover{
 	cursor: pointer;
 	background: #f6e9c5;
 	color: black;
+}
+@media screen and (min-width: 53em) {
+	:root {
+		--columns: 30;
+		--page-padding: 2rem;
+	}
+	.frame {
+		margin-left: 0;
+		grid-template-columns: auto auto auto 1fr;
+		grid-template-areas: 'title prev sponsor demos';
+		justify-items: start;
+		grid-gap: 2rem;
+	}
+	.frame__demos {
+		justify-self: end;
+		opacity: 100%;
+	}
+	.frame__demos-item:first-child {
+		width: auto;
+	}
+	.content {
+		align-items: center;
+		margin-top: -70px;
+	}
+	.content p {
+		font-size: 20px;
+	}
+	button{
+		margin: 10px 50px 10px 0;
+		width: 260px;
+	}
 }
 
