@@ -32,7 +32,7 @@ body {
 	background-size: cover;
 	background-position: 50% 50%;
 	height: 100vh;
-	overflow: hidden;
+	overflow: scroll;
 }
 
 /* Page Loader */
@@ -189,18 +189,17 @@ div.frame_nav a.active{
 	justify-content: center;
 	align-items: center;
 	font-family: Futura, "futura-pt", sans-serif;
-	margin: -50px 50px 50px;
+	margin: -50px 50px 50px 50px;
 	background: #f6e9c550;
 	box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.1);
 	backdrop-filter: blur(8px);
 	border-radius: 12px;
-	overflow: scroll;
 	max-height: 660px;
+	overflow: scroll;
 	scrollbar-width: none;
 }
-
 div.grid-container {
-	columns: 4 200px;
+	columns: 3 200px;
 	column-gap: 1.5rem;
 	width: 100%;
 	margin: 10px;
@@ -221,7 +220,6 @@ div.grid-container div:hover {
 	border-color: #ec1752;
 }
 div.grid-container div:hover img {
-	cursor: pointer;
 	filter: grayscale(0);
 }
 div.grid-container div img {
@@ -230,6 +228,44 @@ div.grid-container div img {
 	border-radius: 8px;
 	transition: all .25s ease-in-out;
 	margin-bottom: -8px;
+}
+
+.proj_name{
+	font-size: 24px;
+	overflow: auto;
+	scrollbar-width: none;
+	margin-bottom: 0;
+	margin-top: 8px;
+	margin-left: 2px;
+}
+.proj_github{
+	font-size: 12px;
+	background: #000000;
+	color: #f6e9c5;
+	box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(8px);
+	border-radius: 5px;
+	border: 1px solid #000000;
+	opacity: 0;
+}
+div.grid-container div:hover .proj_github {
+	opacity: 100%;
+}
+.proj_github:hover{
+	background: #ec1752;
+	border: 1px solid #ec1752;
+	color: #f6e9c5;
+}
+.proj_language{
+	color: grey;
+	margin-top: 0;
+	font-style: italic;
+	overflow: scroll;
+	scrollbar-width: none;
+}
+.proj_date{
+	font-size: 12px;
+	margin-bottom: 0;
 }
 
 
