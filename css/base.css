@@ -183,7 +183,6 @@ a.frame__demos-item {
 .content p {
 	margin: 3vh 4vh 2vh 6vh;
 	max-width: 50ch;
-	font-weight: 400;
 	font-size: 18px;
 	font-variation-settings: "wght" 400, "opsz" 72, "ital" 0;
 	pointer-events: none;
@@ -234,7 +233,7 @@ button{
 	font-size: 18px;
 	color: black;
 	background: #F6E9C520;
-	border: 1px solid #F6E9C520;
+	border: 1px solid #F6E9C500;
 	border-radius: 10px;
 	height: 50px;
 	width: 400px;
