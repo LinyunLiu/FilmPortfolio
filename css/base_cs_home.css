@@ -116,6 +116,7 @@ a:focus-visible {
     justify-self: start;
     pointer-events: none;
     align-items: center;
+    z-index: 999;
 }
 
 body #cdawrap {

@@ -128,16 +128,13 @@ body #cdawrap {
 .frame a {
 	pointer-events: auto;
 }
-.frame__prev {
-	grid-area: prev;
-}
-
 .frame__demos {
 	opacity: 0;
 	grid-area: demos;
 	display: flex;
 	flex-wrap: wrap;
 	gap: 2rem;
+	z-index: 9999;
 }
 
 .frame__demos-item:first-child {
