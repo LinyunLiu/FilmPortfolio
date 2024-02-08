@@ -242,11 +242,10 @@ div.frame_nav{
     margin: 0 0 30px 120px;
     border-radius: 6px;
     border: 1px solid transparent;
-    /*box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.5);*/
     background: #000000;
 }
 div.frame_nav a{
-    margin: 5px 15px 5px 15px;
+    margin: 5px 10px 5px 10px;
     font-size: 16px;
     color: #f6e9c5;
     pointer-events: auto;
