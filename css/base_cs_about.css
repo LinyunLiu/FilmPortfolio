@@ -175,21 +175,22 @@ a.frame__demos-item {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: start;
     font-family: Futura, "futura-pt", sans-serif;
-    margin: -50px 50px 50px;
+    margin:  -70px 10px 10px 10px;
+    min-height: 660px;
+    height: 90vh;
     background: #f6e9c550;
     box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(8px);
     border-radius: 12px;
-    max-height: 660px;
     overflow: scroll;
     scrollbar-width: none;
 }
 .content div{
     margin: 0 10px 40px 0;
-    height: 600px;
+    height: 70vh;
     padding: 0;
     overflow: scroll;
     scrollbar-width: none;
@@ -236,7 +237,6 @@ div.frame_nav{
     margin: 0 0 30px 120px;
     border-radius: 6px;
     border: 1px solid transparent;
-    /*box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.5);*/
     background: #000000;
 }
 div.frame_nav a{
@@ -264,6 +264,7 @@ button{
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(8px);
     transition: background 0.1s ease-in-out;
+    display: none;
 }
 button:hover{
     cursor: pointer;
@@ -279,8 +280,9 @@ button:hover{
         flex-wrap: nowrap;
         justify-content: flex-start;
         align-items: start;
-        margin-top: 10px;
-        overflow: hidden;
+        margin:  10px 50px 50px 50px;
+        min-height: 660px;
+        height: 85vh;
     }
     .content div{
         margin: 20px;
@@ -298,7 +300,7 @@ button:hover{
     }
     .frame__demos {
         justify-self: end;
-        margin-right: 20px;
+        margin-right: 30px;
         opacity: 100%;
     }
     .frame__demos-item:first-child {
@@ -309,5 +311,6 @@ button:hover{
         bottom: 0;
         right: 0;
         margin: 5px;
+        display: unset;
     }
 }

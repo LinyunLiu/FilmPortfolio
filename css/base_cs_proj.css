@@ -189,12 +189,13 @@ div.frame_nav a.active{
 	justify-content: center;
 	align-items: center;
 	font-family: Futura, "futura-pt", sans-serif;
-	margin: -50px 50px 50px 50px;
+	margin:  -70px 10px 10px 10px;
+	min-height: 660px;
+	height: 90vh;
 	background: #f6e9c550;
 	box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.1);
 	backdrop-filter: blur(8px);
 	border-radius: 12px;
-	max-height: 660px;
 	overflow: scroll;
 	scrollbar-width: none;
 }
@@ -280,8 +281,9 @@ div.grid-container div:hover .proj_github {
 		flex-wrap: nowrap;
 		justify-content: flex-start;
 		align-items: start;
-		margin-top: 10px;
-		overflow: scroll;
+		margin:  10px 50px 50px 50px;
+		min-height: 660px;
+		height: 85vh;
 	}
 	.frame {
 		margin-left: 0;
@@ -295,7 +297,7 @@ div.grid-container div:hover .proj_github {
 	}
 	.frame__demos {
 		justify-self: end;
-		margin-right: 20px;
+		margin-right: 30px;
 		opacity: 100%;
 	}
 	.frame__demos-item:first-child {

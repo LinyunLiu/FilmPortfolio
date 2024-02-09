@@ -23,6 +23,19 @@
 			window.location.assign("film/home.html")
 		}
 		</script>
+		<style>
+			.content {
+				opacity: 0;
+			}
+			@keyframes fade-in {
+				from { opacity: 0; }
+				to { opacity: 1; }
+			}
+			#content {
+				opacity: 0;
+				animation: fade-in 0.5s ease-in-out forwards;
+			}
+		</style>
 	</head>
 	<body class="demo">
 		<main>
@@ -34,14 +47,16 @@
 					<a class="frame__demos-item" href="https://www.instagram.com/linyunliu42/">Instagram</a>
 				</nav>
 			</div>
-			<div class="content">
-				<h2><i>P</i>or<i>t</i>folios</h2>
-				<p class="subtitles">Hey, how are you? My name is <span>Linyun Liu</span>. I have recently received my bachelor's degree
-					at <span class="major">Trinity Western University</span>. I majored in Computing Science and studied a concentration in Media & Communication:Film Studies </p>
+			<div id="content" class="content">
+				<h2><i class="p">𝓟</i>ortfolio𝓢</h2>
+				<p class="subtitles">Howdy! My name is <span>Linyun Liu</span>. I have recently received my Bachelor's Degree
+					at <span class="school">Trinity Western University</span>. I majored in Computing Science and studied a concentration in Media & Communication: Film Studies.
+				Here is a portfolio website that I coded myself. Thanks for visiting!</p>
 				<div class="buttons-frame">
-					<button class="button-portfolio" onclick="openPortfolioCS()"><span>Computer Science 🍁</span></button>
-					<button class="physical-computing" onclick="openPortfolioFilm()"><span>Filmmaking 🎞️</span></button>
+					<button class="cs" onclick="openPortfolioCS()"><span>Computer Science</span></button>
+					<button class="film" onclick="openPortfolioFilm()"><span>Film Making</span></button>
 				</div>
+				<p class="footer">2024</p>
 			</div>
 		</main>
 		<div class="cursor">
