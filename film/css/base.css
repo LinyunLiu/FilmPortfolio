@@ -223,12 +223,10 @@ a:focus {
 .icon--navarrow-next {
 	transform: rotate(45deg);
 }
-
 .nav--prev {
 	top: 1rem;
 	left: 1rem;
 }
-
 .icon--navarrow-prev {
 	transform: rotate(-135deg);
 }
@@ -338,6 +336,9 @@ a:focus {
 .icon--longarrow {
 	width: 2rem;
 }
+.icon--longarrow:hover {
+	color: #1bb3de
+}
 .content__close:focus {
 	outline: none;
 }
@@ -371,8 +372,19 @@ a:focus {
 .js .content__subtitle,
 .js .content__number,
 .js .content__text,
+.js .content__video,
 .js .content__close {
 	opacity: 0;
+}
+
+/*ADDED CONTENT*/
+iframe.content__video{
+	margin-top: 2rem;
+	border: 1px solid transparent;
+	border-radius: 12px;
+	width: 82%;
+	height: 50%;
+	display: none;
 }
 
 @media screen and (min-width: 53em) {
@@ -454,13 +466,14 @@ a:focus {
 		top: calc(10vh + 1rem);
 	}
 	.content__number {
-		position: absolute;
-		bottom: 7vh;
-		right: 0;
+		position: fixed;
+		bottom: 30px;
+		right: 30px;
 		font-size: 2rem;
+		color: grey;
 	}
 	.content__title {
-		font-size: 7vw;
+		font-size: 4vw;
 	}
 	.content__subtitle {
 		font-size: 1.15rem;
@@ -471,6 +484,9 @@ a:focus {
 		column-count: 2;
 		column-gap: 2rem;
 		max-width: 600px;
-		text-align: justify;
+		text-align: justify-all;
+	}
+	iframe.content__video{
+		display: unset;
 	}
 }
