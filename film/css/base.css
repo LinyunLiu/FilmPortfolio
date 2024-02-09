@@ -363,6 +363,10 @@ a:focus {
 	font-size: 1rem;
 	font-weight: normal;
 }
+.content__subtitle span{
+	font-size: 0.8rem;
+	color: indianred;
+}
 
 .content__text {
 	font-size: 0.85rem;
