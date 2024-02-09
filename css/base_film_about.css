@@ -1,0 +1,314 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 14px;
+    --color-text: #f3eee0;
+    --color-bg: #000000;
+    --page-padding: 1rem;
+    --columns: 15;
+    --cursor-blend-mode: difference;
+    --cursor-radius: 0;
+}
+.demo {
+    --cursor-bg: radial-gradient(#1bb3de 10%, transparent);
+    --gradient-text-1: #f3eee0;
+    --gradient-text-2: rgb(94 85 147);
+    --cursor-blend-mode: overlay;
+    background-color: #0c0c0c;
+}
+body {
+    margin: 0;
+    color: #f3eee0;
+    font-family: Futura, "futura-pt", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-size: cover;
+    background-position: 50% 50%;
+    height: 100vh;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+/* Page Loader */
+.js .loading::before,
+.js .loading::after {
+    content: '';
+    position: fixed;
+    z-index: 1000;
+}
+
+.js .loading::before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-bg);
+}
+
+.js .loading::after {
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    margin: -30px 0 0 -30px;
+    border-radius: 50%;
+    opacity: 0.4;
+    background: #1bb3de;
+    animation: loaderAnim 0.7s linear infinite alternate forwards;
+
+}
+
+@keyframes loaderAnim {
+    to {
+        opacity: 1;
+        transform: scale3d(0.5,0.5,1);
+    }
+}
+a {
+    text-decoration: none;
+    color: #f3eee0;
+    outline: none;
+    cursor: pointer;
+}
+a:hover {
+    color: #1bb3de;
+    outline: none;
+}
+a:focus {
+    /* Provide a fallback style for browsers
+     that don't support :focus-visible */
+    outline: none;
+    background: lightgrey;
+}
+
+a:focus:not(:focus-visible) {
+    /* Remove the focus indicator on mouse-focus for browsers
+     that do support :focus-visible */
+    background: transparent;
+}
+
+a:focus-visible {
+    /* Draw a very noticeable focus style for
+     keyboard-focus on browsers that do support
+     :focus-visible */
+    outline: 2px solid red;
+    background: transparent;
+}
+
+.frame{
+    margin-left: 50px;
+    margin-right: -20px;
+    padding: var(--page-padding);
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: 'title' 'prev' 'sponsor' 'demos';
+    grid-gap: 0.5rem;
+    justify-items: start;
+    align-self: start;
+    justify-self: start;
+    pointer-events: none;
+    align-items: center;
+    z-index: 999;
+}
+
+body #cdawrap {
+    justify-self: start;
+}
+
+.frame a {
+    pointer-events: auto;
+}
+.frame__prev {
+    grid-area: prev;
+    margin-top: 7px;
+}
+
+.frame__demos {
+    opacity: 0;
+    grid-area: demos;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.frame__demos-item:first-child {
+    width: 100%;
+}
+
+a.frame__demos-item {
+    font-weight: bold;
+}
+.cursor {
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    z-index: 99;
+    mix-blend-mode: var(--cursor-blend-mode);
+    --size: calc(100vw / var(--columns));
+}
+.cursor__inner {
+    display: grid;
+    grid-template-columns: repeat(var(--columns), var(--size));
+}
+
+.cursor__inner-box {
+    width: var(--size);
+    height: var(--size);
+    background: var(--cursor-bg);
+    opacity: 0;
+    border-radius: var(--cursor-radius);
+}
+/*START HERE*/
+.content {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-family: Futura, "futura-pt", sans-serif;
+    margin: -50px 50px 50px;
+    background: #141414;
+    box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    max-height: 660px;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+.content div{
+    margin: 0 10px 40px 0;
+    height: 600px;
+    padding: 0;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+.content div p {
+    margin: 0 0 0 0;
+    max-width: 50ch;
+    font-weight: 400;
+    font-size: clamp(1.2rem,1.0vw,2rem);
+    font-variation-settings: "wght" 400, "opsz" 72, "ital" 0;
+    pointer-events: none;
+    font-family: "greycliff-cf", sans-serif;
+}
+/*HERE TO CUSTOMIZE THE FONTS*/
+.content div p.title{
+    font-weight: 600;
+}
+.content div p span{
+    color: lightgreen;
+}
+.content div p.duration{
+    font-size: 12px;
+    font-weight: 600;
+    color: gray;
+}
+.content div p.detail{
+
+}
+.content div h2 {
+    margin:0 0 5px 0;
+    color: #1bb3de;
+}
+.content div ul li{
+    margin: 1vh 0 0 0;
+    max-width: 50ch;
+    font-weight: 400;
+    font-size: clamp(1.2rem,1.0vw,2rem);
+    font-variation-settings: "wght" 400, "opsz" 72, "ital" 0;
+    pointer-events: none;
+    font-family: "greycliff-cf", sans-serif;
+}
+div.frame_nav{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 22px;
+    left: 10px;
+    margin: 0 0 30px 120px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    background: #1f1f1f;
+
+}
+div.frame_nav a{
+    margin: 5px 15px 5px 15px;
+    font-size: 16px;
+    color: #f3eee0;
+    pointer-events: auto;
+    z-index: 9999;
+}
+div.frame_nav a:hover{
+    color: #1bb3de;
+}
+div.frame_nav a.active{
+    color: #1bb3de;
+}
+button{
+    z-index: 9999;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    border: 1px solid transparent;
+    background: #1bb3deb1;
+    font-size: 30px;
+    color: #f6e9c5;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    transition: background 0.1s ease-in-out;
+}
+button:hover{
+    cursor: pointer;
+    background: #1bb3de;
+}
+
+@media screen and (min-width: 53em) {
+    :root {
+        --columns: 30;
+        --page-padding: 2rem;
+    }
+    .content{
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: start;
+        margin-top: 10px;
+        overflow: hidden;
+    }
+    .content div{
+        margin: 20px;
+        width: 100%;
+    }
+    .frame {
+        margin-left: 0;
+        grid-template-columns: auto auto auto 1fr;
+        grid-template-areas: 'title prev sponsor demos';
+        justify-items: start;
+        grid-gap: 2rem;
+    }
+    .frame__prev{
+        margin-top: 0;
+    }
+    .frame__demos {
+        justify-self: end;
+        margin-right: 20px;
+        opacity: 100%;
+    }
+    .frame__demos-item:first-child {
+        width: auto;
+    }
+    button{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 5px;
+    }
+}

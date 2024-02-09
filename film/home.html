@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Film Portfolio - Home</title>
+		<meta name="description" content="A gooey cursor background effect with SVG filters and CSS blend modes." />
+		<meta name="author" content="Codrops & Modified by Linyun Liu" />
+		<link rel="shortcut icon" href="../favicon.png">
+		<link rel="stylesheet" href="https://use.typekit.net/ftj8drh.css">
+		<link rel="stylesheet" type="text/css" href="../css/base_film_home.css" />
+		<style>
+			.content {
+				opacity: 0;
+			}
+			@keyframes fade-in {
+				from { opacity: 0; }
+				to { opacity: 1; }
+			}
+			#content {
+				opacity: 0;
+				animation: fade-in 0.5s ease-in-out forwards;
+			}
+		</style>
+		<script>document.documentElement.className="js";
+		const supportsCssVars = function () {
+			let e, t = document.createElement("style");
+			return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e
+		}
+		;supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+	</head>
+	<body class="demo">
+		<main>
+			<div class="frame">
+				<a class="frame__prev" href="../index.html">⬅︎ Back</a>
+				<nav class="frame__demos">
+					<a class="frame__demos-item" href="mailto:linyunliu574@gmail.com">Email</a>
+					<a class="frame__demos-item" href="https://github.com/LinyunLiu">GitHub</a>
+					<a class="frame__demos-item" href="https://www.linkedin.com/in/linyun-liu-2a4b05240/">LinkedIn</a>
+					<a class="frame__demos-item" href="https://www.instagram.com/linyunliu42/">Instagram</a>
+				</nav>
+			</div>
+			<div class="frame_nav">
+				<a class="active" href="home.html">Home</a>
+				<a href="about.html">About</a>
+				<a href="projects.html">𝓟𝓻𝓸𝓳𝓮𝓬𝓽 𝓓𝓮𝓶𝓸𝓼</a>
+			</div>
+
+            <!--HERE TO ADD INFORMATION-->
+			<div id="content" class="content">
+				<div class="edu_xp">
+					<h2>Education ✐</h2>
+					<p class="title">Bachelor of Science | Trinity Western University</p>
+					<p class="duration">2019 – 2023 Fall</p>
+					<p class="detail">Natural & Applied Sciences: <span>Computing Science</span> Major
+						<br>Media & Communication: <span>Film Studies</span> Concentration</p>
+					<br><br>
+					<h2>Experience ➹</h2>
+					<p class="title">Communications Assistant Internship | Safe Fleet</p>
+					<p class="duration">Feb. 1st – Apr. 12th , 2023</p>
+					<p class="detail">Edit and create special effects for videos that are used for products promotion</p>
+					<p class="title">Assistant | Luoxiao Taekwondo School</p>
+					<p class="duration">Summer, 2017</p>
+					<p class="detail">Volunteered at a children summer camp to help them learn life skills and independence. Help organize events and schedule.</p>
+					<p class="title">Assistant | Luoxiao Taekwondo School</p>
+					<p class="duration">Spring, 2016</p>
+					<p class="detail">Keep participants in program order for arena in a provincial Taekwondo competition
+						Taking care of contestants and communicate with parents who were highly concerned.
+					</p>
+				</div>
+				<div class="skills">
+					<h2>Skills ✍︎ </h2>
+					<ul>
+						<li>Cinematography</li>
+						<li>Photography</li>
+						<li>Digital Post Production</li>
+						<li>Digital Recording</li>
+						<li>Screenwriting</li>
+						<li>Film History</li>
+						<li>Fine Arts</li>
+					</ul>
+					<br><br>
+					<h2>Software ❀</h2>
+					<ul>
+						<li>Final Cut Pro</li>
+						<li>Logic Pro</li>
+						<li>Adobe Premiere Pro</li>
+						<li>Adobe After Effects</li>
+					</ul>
+				</div>
+				<a href="" title="download resume" download>
+					<button>⬇︎</button>
+				</a>
+			</div>
+            <!--END HERE-->
+
+		</main>
+		<div class="cursor">
+			<div class="cursor__inner">
+				<!-- cursor__inner-box elements come here -->
+			</div>
+			<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+				<defs>
+					<filter id="gooey">
+						<feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="3.2" />
+						<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -7" result="goo" />
+						<feComposite in="SourceGraphic" in2="goo" operator="atop" />
+					</filter>
+				</defs>
+			</svg>
+		</div>
+		
+		<script src="../js/gsap.min.js"></script>
+		<script type="module" src="../js/index.js"></script>
+	</body>
+</html>
