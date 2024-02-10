@@ -22,17 +22,19 @@
             animation: fade-in 0.5s ease-in-out forwards;
         }
     </style>
-    <script>document.documentElement.className="js";
-    const supportsCssVars = function () {
-            let e, t = document.createElement("style");
-            return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e
-        }
-    ;supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+    <script>
+        document.documentElement.className="js";
+        const supportsCssVars = function () {
+                let e, t = document.createElement("style");
+                return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e
+            }
+        ;supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");
+    </script>
 </head>
-<body class="demo">
+<body class="demo" onload="getRidOfHTML()">
 <main>
     <div class="frame">
-        <a class="frame__prev" href="../index.html">⬅︎ Back</a>
+        <a class="frame__prev" id="frame__prev" href="../index.html">⬅︎ Back</a>
         <nav class="frame__demos">
             <a class="frame__demos-item" href="mailto:linyunliu574@gmail.com">Email</a>
             <a class="frame__demos-item" href="https://github.com/LinyunLiu">GitHub</a>
@@ -41,9 +43,9 @@
         </nav>
     </div>
     <div class="frame_nav">
-        <a href="home.html">Home</a>
-        <a class="active" href="about.html">About</a>
-        <a href="projects.html">Projects</a>
+        <a id="link-1" href="home.html">Home</a>
+        <a id="link-2" class="active" href="about.html">About</a>
+        <a id="link-3" href="projects.html">Projects</a>
     </div>
 
     <!--HERE TO ADD INFORMATION-->
@@ -134,5 +136,6 @@
 
 <script src="../js/gsap.min.js"></script>
 <script type="module" src="../js/index.js"></script>
+<script src="../js/extra.js"></script>
 </body>
 </html>
